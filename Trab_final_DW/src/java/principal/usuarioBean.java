@@ -62,8 +62,9 @@ public class usuarioBean {
         FacesContext context = FacesContext.getCurrentInstance();
         HttpSession session = (HttpSession) context.getExternalContext().getSession(false);
         
-        if( senha.equals(confirmacaoSenha) && senha != null && senha != "" ){
-            context.getExternalContext().redirect("mostraUsuario.xhtml");
+        if( senha.equals(confirmacaoSenha) && senha != null && senha != ""){
+//            context.getExternalContext().redirect("mostraUsuario.xhtml");
+            context.getExternalContext().redirect("produtos_teste.xhtml");
         } else {
             context.getExternalContext().redirect("usuario.xhtml");
             session.invalidate();            

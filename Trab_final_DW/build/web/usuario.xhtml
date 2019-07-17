@@ -8,14 +8,15 @@
     <ui:define name="centro">
 <!--        <p:chart type="bar" model="#{vendaColunasBean.vendas}"
                  style="height: 300px" />-->
-        <div style="float: left; width: 45%">
-            
+        <div style="float: left; width: 50%" align="center">
+        
+        <h2>Já é cadastrado?</h2><br/>
         <h2>Faço o seu login:</h2><br/>
         <h:form>
             <h:panelGrid columns="2" style="text-align: right">
                 
             E-mail:
-            <h:inputText id="emailUsuario"
+            <h:inputText id="emailUsuario" required="true" requiredMessage="Vegano,coloque o seu nome!"
                          value="#{usuarioBean.email}"/>
             Senha:
             <h:inputSecret id="senhaUsuario"
@@ -23,29 +24,35 @@
             
             </h:panelGrid>
             
-            <h:commandButton id="btEnviar" value="Enviar" 
-                             action="produtos"/>
+            <h:commandButton id="btEnviar" value="Login" 
+                             action="produtos_teste"/>
             
             </h:form>
         </div>
         
-        <div style="float: right; width: 45%">
-            
-        <h2>Faço o seu login 2:</h2><br/>
+        <div style="float: right; width: 50%" align="center">
+        <h2>Ainda não é cadastrado?</h2><br/>
+        <h2>Faço o seu cadastro:</h2><br/>
         <h:form>
             <h:panelGrid columns="2" style="text-align: right">
-                
+            
+            Nome:
+            <h:inputText id="nomeUsuario" required="true"
+                         value="#{usuarioBean.nome}"/>
             E-mail:
             <h:inputText id="emailUsuario"
                          value="#{usuarioBean.email}"/>
             Senha:
             <h:inputSecret id="senhaUsuario"
                          value="#{usuarioBean.senha}"/>
+            Confirma Senha:
+            <h:inputSecret id="confirmacaoSenhaUsuario"
+                           value="#{usuarioBean.confirmacaoSenha}"/>
             
             </h:panelGrid>
             
-            <h:commandButton id="btEnviar" value="Enviar" 
-                             action="produtos"/>
+            <h:commandButton id="btEnviar" value="Cadastrar" 
+                             action="#{usuarioBean.verificaSenhas()}"/>
             
             </h:form>
         </div>
