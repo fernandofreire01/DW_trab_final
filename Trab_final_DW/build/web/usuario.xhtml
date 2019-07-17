@@ -22,10 +22,12 @@
             <h:inputSecret id="senhaUsuario"
                          value="#{usuarioBean.senha}"/>
             
+            <h:outputText></h:outputText>
+            <h:commandButton id="btEnviar" value="Login" 
+                             action="produtosPage"/>
+            
             </h:panelGrid>
             
-            <h:commandButton id="btEnviar" value="Login" 
-                             action="produtos_teste"/>
             
             </h:form>
         </div>
@@ -45,14 +47,15 @@
             Senha:
             <h:inputSecret id="senhaUsuario"
                          value="#{usuarioBean.senha}"/>
-            Confirma Senha:
+            Confirmar Senha:
             <h:inputSecret id="confirmacaoSenhaUsuario"
                            value="#{usuarioBean.confirmacaoSenha}"/>
+            <h:outputText ></h:outputText>
+            <h:commandButton id="btEnviar" value="Cadastrar" 
+                             action="#{usuarioBean.verificaSenhas()}"/>
             
             </h:panelGrid>
             
-            <h:commandButton id="btEnviar" value="Cadastrar" 
-                             action="#{usuarioBean.verificaSenhas()}"/>
             
             </h:form>
         </div>
