@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <meta http-equiv="Content-Type" 
+              content="text/html; charset=UTF-8" />
+        <title>Loja Vegana</title>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+    </h:head>
+
+    <h:body>
+
+        <div align="left">
+        <p:layout class="principal">
+            <p:layoutUnit position="north" size="110" >
+                <center>
+                    <!--<h:graphicImage url="/Image/vegan.png" width="1250" height="90" />-->
+                    <h:graphicImage url="/Image/vegan7.jpg" height="90" />
+                </center>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="west" size="220">
+                <ui:insert name="menu">
+                    <h:form>
+                        <p:menu style="width: 200px">
+                            <p:submenu label="Menu">
+                                <p:menuitem value="Login"
+                                            icon="ui-icon-key"/>
+                                <p:menuitem value="Visualizar Gráfico"
+                                            icon="ui-icon-contact"
+                                            action="grafico"/>
+                            </p:submenu>
+                        </p:menu>
+                    </h:form>
+                </ui:insert>
+            </p:layoutUnit> 
+            
+            <p:layoutUnit position="center">
+                <ui:insert name="centro">
+                    <h2>Conteúdo dinâmico.</h2>
+                </ui:insert>
+            </p:layoutUnit>
+            
+        </p:layout>
+        </div>
+    </h:body>
+
+</html>
+
