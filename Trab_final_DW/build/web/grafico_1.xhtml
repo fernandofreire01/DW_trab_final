@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="./padrao.xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:define name="centro">
+<!--        <p:chart type="bar" model="#{vendaColunasBean.vendas}"
+                 style="height: 300px" />-->
+        <h2>Faço o seu cadastro vegano:</h2><br/>
+        <h:form>
+            <h:panelGrid columns="2" style="text-align: right">
+                
+            Nome:
+            <h:inputText id="nomeUsuario" 
+                         value="#{usuarioBean.nome}"/>
+            E-mail:
+            <h:inputText id="emailUsuario"
+                         value="#{usuarioBean.email}"/>
+            Senha:
+            <h:inputSecret id="senhaUsuario"
+                         value="#{usuarioBean.senha}"/>
+            Confirma Senha:
+            <h:inputSecret id="confirmacaoSenhaUsuario"
+                         value="#{usuarioBean.confirmacaoSenha}"/>
+            
+            </h:panelGrid>
+            
+            <h:commandButton id="btEnviar" value="Enviar" 
+                             action="#{usuarioBean.verificaSenhas()}"/>
+            
+            </h:form>
+    </ui:define>
+    
+    
+</ui:composition>
+
