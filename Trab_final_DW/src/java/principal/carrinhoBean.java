@@ -22,14 +22,16 @@ public class carrinhoBean {
     
     public carrinhoBean() {
         carrinho = new ArrayList<>();
+//        carrinho.add(new Produto("imagem1", "Nome do Produto 1", "10,00", "01"));
     }
 
     public List<Produto> getCarrinho() {
         return carrinho;
     }
     
-    public void addProduto(Produto produto){
-        carrinho.add(produto);
+    public void addProduto(Produto produtos){
+        System.out.println("adicionado item ao carrinho");
+        carrinho.add(produtos);
     }
 
     /**

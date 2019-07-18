@@ -66,7 +66,7 @@ public class usuarioBean {
 //            context.getExternalContext().redirect("mostraUsuario.xhtml");
             context.getExternalContext().redirect("produtos_teste.xhtml");
         } else {
-            context.getExternalContext().redirect("usuario.xhtml");
+            context.getExternalContext().redirect("index.xhtml");
             session.invalidate();            
         }
     }

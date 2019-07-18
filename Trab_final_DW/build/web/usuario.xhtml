@@ -5,23 +5,27 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:p="http://primefaces.org/ui">
     
+
+    
     <ui:define name="centro">
 <!--        <p:chart type="bar" model="#{vendaColunasBean.vendas}"
                  style="height: 300px" />-->
         <div style="float: left; width: 50%" align="center">
-        
         <h2>Já é cadastrado?</h2><br/>
         <h2>Faço o seu login:</h2><br/>
         <h:form>
-            <h:messages errorStyle="color: red" />
+            <h:messages id="erro1" style="color: brown; font: oblique"/>
+
             <h:panelGrid columns="2" style="text-align: right">
                 
             E-mail:
-            <p:inputText id="emailUsuario" required="true" requiredMessage="Vegano,coloque o seu nome!"
+            <p:inputText id="emailUsuario" required="true" 
+                         requiredMessage="Vegano, coloque o seu e-mail!"
                          value="#{usuarioBean.email}"/>
             Senha:
-            <h:inputSecret id="senhaUsuario"
-                         value="#{usuarioBean.senha}"/>
+            <h:inputSecret id="senhaUsuario" required="true"
+                           requiredMessage="Não esqueça da senha, vegano!"
+                           value="#{usuarioBean.senha}"/>
             
             <h:outputText></h:outputText>
             <h:commandButton id="btEnviar" value="Login" 
@@ -29,22 +33,29 @@
             </h:panelGrid>
             
             </h:form>
+
         </div>
+        
         
         <div style="float: right; width: 50%" align="center">
         <h2>Ainda não é cadastrado?</h2><br/>
         <h2>Faço o seu cadastro:</h2><br/>
         <h:form>
+            <h:messages id="erro2" style="color: brown; font: oblique"/>
+
             <h:panelGrid columns="2" style="text-align: right">
             
             Nome:
             <h:inputText id="nomeUsuario" required="true"
+                         requiredMessage="Vegano, você esqueceu do nome!"
                          value="#{usuarioBean.nome}"/>
             E-mail:
-            <h:inputText id="emailUsuario"
+            <h:inputText id="emailUsuario" required="true"
+                         requiredMessage="Precisamos do seu e-mail vegano!"
                          value="#{usuarioBean.email}"/>
             Senha:
-            <h:inputSecret id="senhaUsuario"
+            <h:inputSecret id="senhaUsuario" required="true"
+                           requiredMessage="Por favor vegano, digite sua senha!"
                          value="#{usuarioBean.senha}"/>
             Confirmar Senha:
             <h:inputSecret id="confirmacaoSenhaUsuario"
