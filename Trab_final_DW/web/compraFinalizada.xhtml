@@ -28,48 +28,34 @@
 
     <ui:define name="centro">
         
-        <div style="float: left; width: 50%" align="center">
-
+        <h2>A Loja Vegana agradece!</h2>
+        
         <h:form>
             <!--<p:dataGrid var="produtos" value="#{produtosBean.produtos}" columns="1">-->
-            <p:dataGrid var="carrinho" value="#{carrinhoBean.carrinho}" columns="1">
+            <!--<p:dataGrid var="carrinho" value="#{carrinhoBean.carrinho}" columns="1">-->
                 <p:column>
                     <!--<p:panel header="#{produtos.nomeProduto}" >-->
-                    <p:panel header="#{carrinho.nomeProduto}" >
+                    <p:panel header="Total: R$ #{carrinhoBean.soma}" >
 
-                        <center>
+<!--                        <center>
                         <h:panelGrid columns="1">
                             <h:panelGroup>
                         <h:graphicImage url="/Image/#{carrinho.imagemProduto}.jpg" width="75" height="75"/>
-                            <!--<p:graphicImage url="/Image/imagem1.jpg" width="500" height="500"/>-->
+                            <p:graphicImage url="/Image/imagem1.jpg" width="500" height="500"/>
                             <h:outputText value="R$ #{carrinho.precoProduto}" />
-                            <!--<h:commandButton value="Finalizar compra"  style="background-color: red; color: white"></h:commandButton>-->
+                            <h:commandButton value="Finalizar compra"  style="background-color: red; color: white"></h:commandButton>
                             </h:panelGroup>  
 
 
                         </h:panelGrid>
                             
 
-                        </center>
+                        </center>-->
                     </p:panel>
                 </p:column>
-            </p:dataGrid>
+            <!--</p:dataGrid>-->
         </h:form>
-        </div>
         
-        <div style="float: right; width: 50%" align="center">
-
-            <center>
-
-                <h:outputText value="Valor final R$#{carrinhoBean.soma}" />
-                <br></br>
-                
-                <p:commandButton id="finalizaCompra" value="Finalizar compra!" 
-                                 style="width: 150px;color: white; background-color: red"
-                                 action="compraFinalizada">
-                </p:commandButton>
-            </center>
-        </div>
     </ui:define>
 
 </ui:composition>

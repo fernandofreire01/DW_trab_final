@@ -64,10 +64,10 @@
                 <h:outputText value="Valor final R$#{carrinhoBean.soma}" />
                 <br></br>
                 
-                <h:commandButton id="finalizaCompra" value="Finalizar compra" 
+                <p:commandButton id="finalizaCompra" value="Finalizar compra!" 
                                  style="width: 150px;color: white; background-color: red"
-                                 onclick="alert('Compra finalizada');">
-                </h:commandButton>
+                                 action="compraFinalizada">
+                </p:commandButton>
             </center>
         </div>
     </ui:define>
