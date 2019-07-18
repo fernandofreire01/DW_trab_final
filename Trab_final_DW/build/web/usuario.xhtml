@@ -13,10 +13,11 @@
         <h2>Já é cadastrado?</h2><br/>
         <h2>Faço o seu login:</h2><br/>
         <h:form>
+            <h:messages errorStyle="color: red" />
             <h:panelGrid columns="2" style="text-align: right">
                 
             E-mail:
-            <h:inputText id="emailUsuario" required="true" requiredMessage="Vegano,coloque o seu nome!"
+            <p:inputText id="emailUsuario" required="true" requiredMessage="Vegano,coloque o seu nome!"
                          value="#{usuarioBean.email}"/>
             Senha:
             <h:inputSecret id="senhaUsuario"
@@ -25,9 +26,7 @@
             <h:outputText></h:outputText>
             <h:commandButton id="btEnviar" value="Login" 
                              action="produtosPage"/>
-            
             </h:panelGrid>
-            
             
             </h:form>
         </div>
