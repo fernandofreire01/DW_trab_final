@@ -20,20 +20,38 @@ import javax.faces.bean.SessionScoped;
 public class carrinhoBean {
     
     private List <Produto> carrinho;
+
+
+    double soma = 0;
+    
     
     public carrinhoBean() {
         carrinho = new ArrayList<>();
-//        carrinho.add(new Produto("imagem1", "Nome do Produto 1", "10,00", "01"));
+//      carrinho.add(new Produto("imagem1", "Nome do Produto 1", "10,00", "01"));
     }
 
     public List<Produto> getCarrinho() {
         return carrinho;
     }
     
+    public double getSoma() {
+        return soma;
+    }
+
+    public void setSoma(double soma) {
+        this.soma = soma;
+    }       
+    
     public void addProduto(Produto produtos){
         System.out.println("adicionado item ao carrinho");
         carrinho.add(produtos);
+        double preco = 0;
+        preco = Double.parseDouble(produtos.getPrecoProduto().replace(",", "."));
+        soma = soma + preco;
+        //carrinho.add(new Produto(imagemProduto, nomeProduto, precoProduto, idProduto));
     }
+    
+ 
 
     /**
      * Creates a new instance of carrinhoBean
