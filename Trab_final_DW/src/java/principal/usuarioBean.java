@@ -6,6 +6,9 @@
 package principal;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -18,6 +21,7 @@ import javax.servlet.http.HttpSession;
 @ManagedBean(name = "usuarioBean")
 @SessionScoped
 public class usuarioBean {
+    private List <Cliente> cliente;
     
     String nome;
     String email;
@@ -57,23 +61,36 @@ public class usuarioBean {
     }
     
     /* Função para verificar se as senhas são iguais */
-    public void verificaSenhas() throws IOException{
-        
-        FacesContext context = FacesContext.getCurrentInstance();
-        HttpSession session = (HttpSession) context.getExternalContext().getSession(false);
-        
-        if( senha.equals(confirmacaoSenha) && senha != null && senha != ""){
-//            context.getExternalContext().redirect("mostraUsuario.xhtml");
-            context.getExternalContext().redirect("produtos_teste.xhtml");
+    public String verificaSenhas() throws IOException{
+        String usuarioLogado = null;
+        for(int i=0; i < cliente.size(); i++){
+        if (cliente.get(i).getEmail().equals(email)){
+           if (cliente.get(i).getSenha().equals(senha)){
+            usuarioLogado = "1";
+            return "/produtosPage?faces-redirect=true";
+                }
+            }   
+        }if (usuarioLogado != "1") {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuário ou Senha Inválidos", "Login Inválido"));
+            return null;
         } else {
-            context.getExternalContext().redirect("index.xhtml");
-            session.invalidate();            
-        }
+            HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+            if (session != null) {
+                session.setAttribute("usuario", usuarioLogado);
+            }
+            return "/produtosPage?faces-redirect=true";
+            }
     }
     
     /**
      * Creates a new instance of usuarioBean
      */
-    public usuarioBean() {}
+    public usuarioBean() {
+    cliente = new ArrayList<>();
+    cliente.add(new Cliente("Anselmo","anselmo@mail.com","123"));
+    cliente.add(new Cliente("Isaac","isaac@mail.com","1234"));
+    cliente.add(new Cliente("Fernando","fernando@mail.com","123"));
+    cliente.add(new Cliente("Claudinho","claudinho@mail.com","1234"));
+    }
     
 }

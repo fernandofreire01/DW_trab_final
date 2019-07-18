@@ -34,25 +34,22 @@
                 <p:column>
                     <p:panel header="#{produtos.nomeProduto}" >
                         <center>
-                        <h:panelGrid columns="1">
-                            
+                        <h:panelGrid columns="1" >
+
 <!--                            <h:panelGroup>-->
-                                <p:graphicImage url="/Image/#{produtos.imagemProduto}.jpg" width="75" height="75" style="align-content: center"/>
+                                <h:graphicImage url="/Image/#{produtos.imagemProduto}.jpg" width="75" height="75"/>
     <!--                            <p:graphicImage url="/Image/imagem1.jpg" width="500" height="500"/>-->
-                                <h:outputText value="R$ #{produtos.precoProduto}" />     
+                                <h:outputText value="R$ #{produtos.precoProduto}" />
                                 <!--<h:commandButton value="Adicionar ao carrinho"  style="background-color: green; color: white"></h:commandButton>-->
 <!--                            </h:panelGroup>  -->
-                        <center>
                             <h:commandButton id="carrinho" image="/Image/ADD_CARRINHO.png" 
                                              style="width: 150px" action="#{carrinhoBean.addProduto(produtos)}"                                        
                                              onclick="alert('Produto adicionado ao carrinho :)')">
                             </h:commandButton>
-                        </center>
 
                         </h:panelGrid>
-                            
-
                         </center>
+                            
                     </p:panel>
                 </p:column>
             </p:dataGrid>

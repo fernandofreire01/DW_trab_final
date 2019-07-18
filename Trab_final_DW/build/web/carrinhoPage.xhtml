@@ -28,6 +28,8 @@
 
     <ui:define name="centro">
         
+        <div style="float: left; width: 50%" align="center">
+
         <h:form>
             <!--<p:dataGrid var="produtos" value="#{produtosBean.produtos}" columns="1">-->
             <p:dataGrid var="carrinho" value="#{carrinhoBean.carrinho}" columns="1">
@@ -35,30 +37,35 @@
                     <!--<p:panel header="#{produtos.nomeProduto}" >-->
                     <p:panel header="#{carrinho.nomeProduto}" >
 
-<!--                        <center>
+                        <center>
                         <h:panelGrid columns="1">
                             <h:panelGroup>
-                        <p:graphicImage url="/Image/#{produtos.imagemProduto}.jpg" width="75" height="75" style="align-content: center"/>
-                            <p:graphicImage url="/Image/imagem1.jpg" width="500" height="500"/>
-                            <h:outputText value="R$ #{produtos.precoProduto}" />     
-                            <h:commandButton value="Adicionar ao carrinho"  style="background-color: green; color: white"></h:commandButton>
+                        <h:graphicImage url="/Image/#{carrinho.imagemProduto}.jpg" width="75" height="75"/>
+                            <!--<p:graphicImage url="/Image/imagem1.jpg" width="500" height="500"/>-->
+                            <h:outputText value="R$ #{carrinho.precoProduto}" />
+                            <!--<h:commandButton value="Finalizar compra"  style="background-color: red; color: white"></h:commandButton>-->
                             </h:panelGroup>  
-                        <center>
-                            <h:commandButton id="carrinho" image="/Image/ADD_CARRINHO.png" 
-                                             style="width: 150px" action="#{carrinhoBean.addProduto(produto)}"
-                                             onclick="alert('Produto adicionado ao carrinho :)');">
-                            </h:commandButton>
-                        </center>
+
 
                         </h:panelGrid>
                             
 
-                        </center>-->
+                        </center>
                     </p:panel>
                 </p:column>
             </p:dataGrid>
         </h:form>
-    
+        </div>
+        
+        <div style="float: left; width: 50%" align="center">
+
+            <center>
+                <h:commandButton id="finalizaCompra" value="Finalizar compra" 
+                                 style="width: 150px;color: white; background-color: red" action=""
+                                 onclick="alert('Compra finalizada');">
+                </h:commandButton>
+            </center>
+        </div>
     </ui:define>
 
 </ui:composition>
