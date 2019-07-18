@@ -19,6 +19,7 @@ public class Cliente {
     private String nome;
     private String email;
     private String senha;
+    private String confirmacaoSenha;
 
     /**
      * Creates a new instance of Cliente
@@ -53,4 +54,11 @@ public class Cliente {
         this.senha = senha;
     }
     
+    public Cliente(String nome, String email, String senha, String confirmacaoSenha) {
+    
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.confirmacaoSenha = confirmacaoSenha;
+    }
 }
