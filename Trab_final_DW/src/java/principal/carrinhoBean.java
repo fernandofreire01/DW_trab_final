@@ -48,8 +48,11 @@ public class carrinhoBean {
         double preco = 0;
         preco = Double.parseDouble(produtos.getPrecoProduto().replace(",", "."));
         soma = soma + preco;
+        
+        getSoma();
         //carrinho.add(new Produto(imagemProduto, nomeProduto, precoProduto, idProduto));
     }
+    
     
  
 
