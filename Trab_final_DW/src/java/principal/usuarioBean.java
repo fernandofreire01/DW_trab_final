@@ -60,6 +60,17 @@ public class usuarioBean {
         this.confirmacaoSenha = confirmacaoSenha;
     }
     
+    public String cadastro() throws IOException{
+            if(senha.equals(confirmacaoSenha)){
+                cliente.add(new Cliente(nome,email,senha,confirmacaoSenha));
+            }
+            else{
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Senhas diferentes", "Login Inválido"));
+            return null;
+                }
+            return "/usuario?faces-redirect=true";                
+    }
+    
     /* Função para verificar se as senhas são iguais */
     public String verificaSenhas() throws IOException{
         String usuarioLogado = null;
@@ -92,5 +103,7 @@ public class usuarioBean {
     cliente.add(new Cliente("Fernando","fernando@mail.com","123"));
     cliente.add(new Cliente("Claudinho","claudinho@mail.com","1234"));
     }
+    
+    
     
 }
