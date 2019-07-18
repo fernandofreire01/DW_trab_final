@@ -20,8 +20,14 @@
                                 <h:outputText value="R$ #{produtos.precoProduto}" />     
                                 <!--<h:commandButton value="Adicionar ao carrinho"  style="background-color: green; color: white"></h:commandButton>-->
 <!--                            </h:panelGroup>  -->
+                        <center>
+                            <h:commandButton id="carrinho" image="/Image/ADD_CARRINHO.png" 
+                                             style="width: 150px" action="#{usuarioBean.verificaSenhas()}">
+                            </h:commandButton>
+                        </center>
+
                         </h:panelGrid>
-                        <h:commandButton image="/Image/botao_carrinho.png" style="width: 150px" ></h:commandButton>
+                            
 
                         </center>
                     </p:panel>
